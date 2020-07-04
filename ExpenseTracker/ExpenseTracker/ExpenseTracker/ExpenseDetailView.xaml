@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
+             mc:Ignorable="d"
+             x:Class="ExpenseTracker.ExpenseDetailView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="ExpenseDate" Margin="0,0,20,0"></Label>
+            <dg:DataGrid Padding="0,0,0,0" x:Name="gvExpenseList" SelectionEnabled="True"  SelectedItem="{Binding SelectItemAsync}"
+                         RowHeight="40" HeaderHeight="50" BorderColor="#CCCCCC" HeaderBackground="#E0E6F8"  
+                         ActiveRowColor="#8899AA">
+
+                <dg:DataGrid.HeaderFontSize>
+                    <OnIdiom  x:TypeArguments="x:Double">
+                        <OnIdiom.Tablet>15</OnIdiom.Tablet>
+                        <OnIdiom.Phone>12</OnIdiom.Phone>
+                    </OnIdiom>
+                </dg:DataGrid.HeaderFontSize>
+                <dg:DataGrid.Columns >
+                    <dg:DataGridColumn x:Name="expItem" Title="Item" PropertyName="ExpItem"  SortingEnabled="False">
+                       
+
+
+                    </dg:DataGridColumn>
+
+                    <dg:DataGridColumn x:Name="expAmount" Title="Amount" PropertyName="ExpAmount" SortingEnabled="False"/>
+
+                </dg:DataGrid.Columns>
+
+                <dg:DataGrid.RowsBackgroundColorPalette>
+                    <dg:PaletteCollection x:Name="act">
+                        <!--<Color>#F2F2F2</Color>-->
+                        <Color>#FFFFFF</Color>
+                    </dg:PaletteCollection>
+                </dg:DataGrid.RowsBackgroundColorPalette>
+            </dg:DataGrid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
