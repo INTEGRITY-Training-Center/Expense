@@ -21,7 +21,7 @@ namespace ExpenseTracker
 
         protected override void OnStart()
         {
-            AppCenter.Start("ios=b21ab3c2-c7a1-46ee-adff-30a83b05059a;", typeof(Analytics), typeof(Crashes));
+            AppCenter.Start("ios=b21ab3c2-c7a1-46ee-adff-30a83b05059a;"+"android=240cc9fa-e31f-42d6-b4b2-e572e9131e38;", typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()
